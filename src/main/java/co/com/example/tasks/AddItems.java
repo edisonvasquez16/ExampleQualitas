@@ -14,7 +14,7 @@ public class AddItems implements Task {
 
     private final String item;
 
-    public AddItems(String item){
+    public AddItems(String item) {
         this.item = item;
     }
 
