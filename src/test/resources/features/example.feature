@@ -9,5 +9,5 @@ Feature: Validar carrito de compras
   @ScenarioExample @smoke
   Scenario: Validar items en carro de compras
     Given que el usuario Edison accede hasta la página principal
-    When el agrega item Play Station 5 al carrito
+    When el agrega item playstation 5 disco al carrito
     Then el puede realizar la compra de los artículos
