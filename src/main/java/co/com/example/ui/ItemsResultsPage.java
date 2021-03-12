@@ -6,6 +6,6 @@ public class ItemsResultsPage {
 
     public static final Target LBL_ITEM =
             Target.the("label item")
-            .locatedBy("//span[contains(text(),'{0}')]");
+                    .locatedBy("//span[contains(text(),'{0}') and contains(@class,'shelfProductName')]");
 
 }
