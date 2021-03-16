@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "code": 1,
+      "name": "Freidora de aire oster bioceramic",
+      "value": "$ 269.900",
+      "description": "Freidora oster"
+    },
+    {
+      "code": 2,
+      "name": "Freidora de aire oster bioceramic",
+      "value": "$ 269.900",
+      "description": "Freidora oster"
+    },
+    {
+      "code": 3,
+      "name": "playstation 5 disco",
+      "value": "$ 4.688.496",
+      "description": "Consola PS5"
+    }
+  ],
+  "articles": [
+    {
+      "code": 1,
+      "name": "Freidora de aire oster bioceramic",
+      "value": "$ 269.900",
+      "description": "Freidora oster"
+    },
+    {
+      "code": 2,
+      "name": "playstation 5 disco",
+      "value": "$ 4.688.496",
+      "description": "Consola PS5"
+    }
+  ]
+}

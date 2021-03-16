@@ -10,6 +10,7 @@ import co.com.example.tasks.SearchProduct;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import lombok.SneakyThrows;
 
 import java.util.List;
 
@@ -72,6 +73,17 @@ public class ExampleSteps {
                         seeThat(the(ITEM_CART), isVisible()),
                         seeThat(TextFound.in(LBL_TOTAL_CART), equalTo(item.getValue()))
                         //seeThat(TextFound.in(LBL_DESCRIPTION_ITEM), equalTo(item.getDescription()))
+                );
+    }
+
+    @SneakyThrows
+    @When("^el agrega el item (.*) al carrito$")
+    public void addItemFromJson(String code) {
+    item = ItemsFactory.withCode(code);
+        theActorInTheSpotlight()
+                .wasAbleTo(
+                        SearchProduct.withName(item.getName()),
+                        AddItems.toCart(item.getName())
                 );
     }
 }
