@@ -1,6 +1,8 @@
 package co.com.example.setpdefinitions;
 
+import co.com.example.factories.ElectronicItemsFactory;
 import co.com.example.factories.ItemsFactory;
+import co.com.example.models.ElectronicItemModel;
 import co.com.example.models.ItemModel;
 import co.com.example.navigation.OpenBrowser;
 import co.com.example.questions.TextFound;
@@ -26,6 +28,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class ExampleSteps {
 
     private ItemModel item;
+    private ElectronicItemModel electronic;
 
     @Given("^que el usuario (.*) accede hasta la página principal$")
     public void accessToApp(String name) {
@@ -79,11 +82,21 @@ public class ExampleSteps {
     @SneakyThrows
     @When("^el agrega el item (.*) al carrito$")
     public void addItemFromJson(String code) {
-    item = ItemsFactory.withCode(code);
+        item = ItemsFactory.withCode(code);
         theActorInTheSpotlight()
                 .wasAbleTo(
                         SearchProduct.withName(item.getName()),
                         AddItems.toCart(item.getName())
+                );
+    }
+
+    @When("^el agrega un item electrónico con código (.*) al carrito$")
+    public void addElectronicItem(String code) {
+        electronic = ElectronicItemsFactory.getElectronicItem(code);
+        theActorInTheSpotlight()
+                .wasAbleTo(
+                        SearchProduct.withName(electronic.getName()),
+                        AddItems.toCart(electronic.getName())
                 );
     }
 }

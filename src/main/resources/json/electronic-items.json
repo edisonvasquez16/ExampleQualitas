@@ -1,0 +1,28 @@
+{
+  "electronics": [
+    {
+      "code": "1",
+      "name": "Freidora de aire oster bioceramic",
+      "value": "$ 269.900",
+      "description": "Freidora oster",
+      "voltage": 120,
+      "charge": "15w",
+      "details": {
+        "distributor": "Exito",
+        "mark": "Orter"
+      }
+    },
+    {
+      "code": "2",
+      "name": "Freidora de aire mabe",
+      "value": "$ 269.900",
+      "description": "Freidora mabe",
+      "voltage": 120,
+      "charge": "15w",
+      "details": {
+        "distributor": "Exito",
+        "mark": "Orter"
+      }
+    }
+  ]
+}

@@ -6,31 +6,42 @@ Feature: Validar carrito de compras
   Quiero agregar items al carro de compras
   Para realizar la compra de artículos
 
-  @ScenarioExample1 @smoke
-  Scenario: Validar items en carro de compras
+  Background: Acceso hasta la aplicación Web
     Given que el usuario Edison accede hasta la página principal
+
+
+  @ScenarioExample1 @Rregresion
+  Scenario: Validar items en carro de compras sencillo
     When el agrega item playstation 5 disco al carrito
     Then el puede realizar la compra de los artículos por un valor de $ 4.688.497
 
   @ScenarioExample2 @smoke
-  Scenario Outline: Validar items en carro de compras
-    Given que el usuario <nombre> accede hasta la página principal
+  Scenario Outline: Validar items en carro de compras desde tabla
     When el agrega item al carrito con los datos
       | <articulo> | <valor> | <descripción> |
     Then el puede realizar la compra de los artículos
 
     Examples:
-      | nombre | articulo                          | valor       | descripción    |
-      | Edison | Freidora de aire oster bioceramic | $ 269.900   | Freidora oster |
-      | Edison | playstation 5 disco               | $ 4.688.496 | Consola PS5    |
+      | articulo                          | valor       | descripción    |
+      | Freidora de aire oster bioceramic | $ 269.900   | Freidora oster |
+      | playstation 5 disco               | $ 4.688.496 | Consola PS5    |
 
-  @ScenarioExample3 @smoke @Stable
-  Scenario Outline: Validar items en carro de compras
-    Given que el usuario <nombre> accede hasta la página principal
+  @ScenarioExample3 @smoke
+  Scenario Outline: Validar items en carro de compras desde JSON
     When el agrega el item <articulo> al carrito
     Then el puede realizar la compra de los artículos
 
     Examples:
-      | nombre | articulo |
-      | Edison | 1        |
-      | Edison | 2        |
+      | articulo |
+      | 1        |
+      | 2        |
+
+  @ScenarioExample4 @smoke @this
+  Scenario Outline: Nueva estructura de json
+    When el agrega un item electrónico con código <articulo> al carrito
+    Then el puede realizar la compra de los artículos
+
+    Examples:
+      | articulo |
+      | 1        |
+      | 2        |
